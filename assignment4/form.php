@@ -1,8 +1,7 @@
-<?php
-  session_start();
-?>
+<?php session_start();?>
 <?php
 if (isset($_POST["generate-pdf"])) {
+  //Including the fpdf package
   require("../fpdf/fpdf.php");
   $pdf = new FPDF();
   $pdf->AddPage();
@@ -34,7 +33,6 @@ if (isset($_POST["generate-pdf"])) {
     }
   }
   $file = time() . '.pdf';
-  // $pdf->Output($file,'D');
   $pdf->Output($file, 'I');
 }
 ?>
@@ -59,7 +57,6 @@ if (isset($_POST["generate-pdf"])) {
     }
   </style>
 </head>
-
 
 <body>
   <div class="container">

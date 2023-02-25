@@ -1,9 +1,7 @@
-<?php
-  //Code for the output from the form.
-  session_start();
-?>
+<?php session_start();?>
 <?php
   if (isset($_POST["generate-pdf"])) {
+  //Including the fpdf package.  
   require("../fpdf/fpdf.php");
   $pdf = new FPDF();
   $pdf->AddPage();
@@ -43,11 +41,9 @@
     }
   }
   $file = time() . '.pdf';
-  // $pdf->Output($file,'D');
   $pdf->Output($file, 'I');
-  // $pdf->Output($file,'O');
-  // $pdf->Output();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +66,6 @@
     }
   </style>
 </head>
-
 
 <body>
   <div class="container">
@@ -106,8 +101,5 @@
   </div>
 </body>
 
-<?php
-// session_destroy();
-?>
-
 </html>
+

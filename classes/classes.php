@@ -1,20 +1,26 @@
 <?php
-
-/**
- * Creating class to create object for firstname and lastname
- */
+  /**
+   * Creating class to create object for firstname and lastname
+   */
 class details {
   /**
    * Variables for firstname and lastname.
    * @var string $firstName.
+   *  Stores the firstname.
    * @var string $lastName.
+   *  Stores the lastname.
    */
   public $firstName = "";
   public $lastName = "";
   /**
-   * Constructor for the class details.
+   * Constructor to initialize objects.
+   * 
    * @param string $firstName
+   *  Passing this string to initialze firstname
+   * 
    * @param string $lastName
+   *  Passing this string to initialze firstname
+   *  
    * Setting the value to the object in the constructor.
    */
   function __construct(string $firstName,string $lastName) {
@@ -22,9 +28,7 @@ class details {
     $this->lastName = $lastName;
   }
 
-  /**
-   * 
-   */
+ 
   function check_data($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -48,7 +52,9 @@ class details {
  *
  * @param mixed $data
  *  To check any data pass to this empty or not.
+ * 
  * @return boolean.
+ *  If the data is empty it will return true,otherwise false.
  */
   function check_empty($data) {
     if (empty($data)) {
@@ -129,6 +135,7 @@ class GetNumber {
 class GetEmail {
   /**
    * @var string $emailId
+   *  Stores the email id as a string.
    */
   public $emailId;
   public function check_email($data) {
@@ -139,15 +146,21 @@ class GetEmail {
   }
   /**
    * Constructer to initialize the object data member
+   * 
+   * @param $emailId
+   *  Setting email id when a object is created.
    */
   function __construct($emailId){
     $this->emailId = $emailId;
   }
   /**
    * Function to check whether the email Id is valid or not.
+   * 
    * @param string $emailId
    * Passing the email Id to the parameter for checking.
+   * 
    * @return bool
+   *  If the email id is valid it will return true.otherwise false.
    */
   public function validate_email($emailId) {
     if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $emailId)) {
@@ -157,11 +170,13 @@ class GetEmail {
       return FALSE;
     }
   }
+
    /**
    * Function to check whether the email Id is empty or not.
    * @param string $emailId
    * Passing the email Id to the parameter for checking.
    * @return bool
+   *  If the email id is empty returns true otherwise false.
    */
   public function check_empty_email($emailId) {
     if (empty($emailId)){
@@ -172,3 +187,4 @@ class GetEmail {
     }
   }
 }
+

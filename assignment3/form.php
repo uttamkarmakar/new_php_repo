@@ -14,19 +14,15 @@
       <img src="../upload-images/<?php echo $_SESSION["image"]; ?>" alt="jeee">
     </div>
     <h2> <span class="hello">Hello</span>
-      <?php
-      echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];
-      ?>
+      <?php echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];?>
     </h2>
     <?php
-    if (isset($_SESSION["text-area"])) {
+      if (isset($_SESSION["text-area"])) {
       include("textarea.php");
     }?>
   </div>
 </body>
-
 <?php
   session_destroy();
 ?>
-
 </html>

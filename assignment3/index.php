@@ -26,15 +26,15 @@
   <source src="../video/night-sky.mp4">
   </video>
   <?php
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-  include("../classes/classes.php");
-  $firstError = $lastError = "";
-  $imageError = "";
-  $uploadOk = 1;
-  $temp = 0;
+    include("../classes/classes.php");
+    $firstError = $lastError = "";
+    $imageError = "";
+    $uploadOk = 1;
+    $temp = 0;
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $person = new details($_POST["firstname"], $_POST["lastname"]);
@@ -73,17 +73,15 @@
         $uploadOk  = 0;
       } 
       elseif ($image->imageType != "image/jpg"
-      && $image->imageType != "image/png"
-      && $image->imageType != "image/jpeg"
-      && $image->imageType != "iamge/gif") {
+        && $image->imageType != "image/png"
+        && $image->imageType != "image/jpeg"
+        && $image->imageType != "iamge/gif") {
         $imageError = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
       } 
       else (move_uploaded_file($image->imageTname, "upload-images/" . $image->imageName));
     }
   }
-
-  // 
   ?>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -157,12 +155,10 @@
   }
   ?>
 
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
 </html>

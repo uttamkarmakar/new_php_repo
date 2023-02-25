@@ -21,19 +21,20 @@
   <video id="bgVideo" autoplay loop muted plays-inline>
   <source src="../video/night-sky.mp4">
   </video>
-  <?php session_start(); ?>
+  
   <?php
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
-  include("../classes/classes.php");
-  // Variables to show in case there will any error
-  $firstError = $lastError = "";
-  $imageError = "";
-  $phoneError = "";
-  $uploadOk = 1;
-  $temp = 0;
-  $emailError = "";
+    session_start();
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    include("../classes/classes.php");
+    // Variables to show in case there will any error
+    $firstError = $lastError = "";
+    $imageError = "";
+    $phoneError = "";
+    $uploadOk = 1;
+    $temp = 0;
+    $emailError = "";
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Creating object for the classes
     $person = new details($_POST["firstname"], $_POST["lastname"]);
@@ -190,8 +191,6 @@
     header("Location: form.php ");
   }
   ?>
-
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
